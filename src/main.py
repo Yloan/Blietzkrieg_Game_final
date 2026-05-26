@@ -180,7 +180,7 @@ class Game:
 
         try:
             self.musics[self.current_music].play()
-            self.musics[self.current_music].volume(0.01)
+            self.musics[self.current_music].volume(0.03)
         except Exception:
             pass
 
@@ -836,7 +836,7 @@ class Game:
         # self.etat = "game"
 
         self.musics[self.current_music].play()
-        self.musics[self.current_music].volume(0.01)
+        self.musics[self.current_music].volume(0.03)
         while self.running:
             self._process_network_messages()
             if self.etat == "menu":
@@ -1516,9 +1516,9 @@ class Game:
 
 
 if __name__ == "__main__":
-    if hasattr(sys, '_MEIPASS'):
+    if hasattr(sys, "_MEIPASS"):
         os.chdir(sys._MEIPASS)
-    elif getattr(sys, 'frozen', False):
+    elif getattr(sys, "frozen", False):
         os.chdir(os.path.dirname(sys.executable))
     game = Game(width=1280, height=720, fullscreen=False)
     game.run()

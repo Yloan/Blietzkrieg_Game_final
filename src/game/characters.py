@@ -557,7 +557,7 @@ class Character:
                 snd = pyg.mixer.Sound(
                     get_asset_path(*path.replace("assets/", "").split("/"))
                 )
-                snd.set_volume(1)
+                snd.set_volume(0.02)
                 self._sounds[skill_key] = snd
             except (FileNotFoundError, pyg.error) as e:
                 print_warning(
